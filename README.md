@@ -1,10 +1,10 @@
-#  ASCII Studio
+#  VoxelText 
 
 ![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![CustomTkinter](https://img.shields.io/badge/GUI-CustomTkinter-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
 
-**ASCII Studio** is a modern, high-performance desktop application designed to convert image files into detailed ASCII art and ANSI color representations. Built with Python and CustomTkinter, it features multi-core CPU processing, customizable width scaling, terminal-style diagnostics (`afetch`), and color palette selection.
+**VoxelText** is a modern, high-performance desktop application designed to convert image files into detailed ASCII art and ANSI color representations. Built with Python and CustomTkinter, it features multi-core CPU processing, customizable width scaling, terminal-style diagnostics (`afetch`), and color palette selection.
 
 ---
 
@@ -26,5 +26,5 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/2-2nm/ASCII-Studio.git](https://github.com/2-2nm/ASCII-Studio.git)
-cd ASCII-Studio
+git clone [https://github.com/2-2nm/VoxelText.git](https://github.com/2-2nm/VoxelText.git)
+cd VoxelText
