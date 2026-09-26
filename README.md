@@ -10,7 +10,7 @@
 
 ##  Features
 
-- Multi-Core CPU Rendering: Parallel image processing leveraging `ProcessPoolExecutor` for maximum speed.
+- **Multi-Core CPU Rendering:** Parallel image processing leveraging `ProcessPoolExecutor` for maximum speed.
 - Rich Palette Select: 10+ visual color modes including *Matrix Green*, *Full ANSI Color*, *Cyber Cyan*, *Neon Pink*, and *Amber Yellow*.
 - Overdrive Width Mode: Break beyond standard slider limits and specify custom render widths (e.g., 3000px+).
 - Dark & Light Mode: Seamless theme switching with custom title bar styling.
