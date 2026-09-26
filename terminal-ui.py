@@ -15,7 +15,7 @@ ctk.set_appearance_mode("Dark"); ctk.set_default_color_theme("blue")
 class AsciiArtAppCTk(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("ASCII Studio")
+        self.title("VoxelText")
         self.THEME_COLORS = {
             "Dark": {"bg_dark": "#090A0F", "bg_surface": "#0F111A", "bg_panel": "#1A1D2B", "text_primary": "#A9B1D6", "text_muted": "#565F89", "accent": "#7AA2F7", "cmd_prompt": "#73DACA", "title_tag": "#BB9AF7", "key_tag": "#7DCFFF", "val_tag": "#C0CAF5", "note_tag": "#E0AF68", "log_info": "#7DCFFF", "log_warn": "#E0AF68", "log_err": "#F7768E"},
             "Light": {"bg_dark": "#E2E8F0", "bg_surface": "#FFFFFF", "bg_panel": "#CBD5E1", "text_primary": "#0F172A", "text_muted": "#475569", "accent": "#2563EB", "cmd_prompt": "#059669", "title_tag": "#6D28D9", "key_tag": "#0284C7", "val_tag": "#1E293B", "note_tag": "#D97706", "log_info": "#0284C7", "log_warn": "#D97706", "log_err": "#DC2626"}
@@ -116,7 +116,7 @@ class AsciiArtAppCTk(ctk.CTk):
         self.txt_ascii.tag_config("val", foreground=self.colors["val_tag"], font=("Consolas", 9))
         self.txt_ascii.tag_config("note", foreground=self.colors["note_tag"], font=("Consolas", 9, "italic"))
         specs = [("OS", info["OS"]), ("Kernel", info["Kernel"]), ("Uptime", info["Uptime"]), ("Date Time", info["DateTime"]), ("CPU", info["CPU"]), ("GPU", info["GPU"]), ("Memory", info["Memory"]), ("Disk", info["Disk"]), ("Terminal", info["Terminal"])]
-        self.txt_ascii.insert(tk.END, " ┌──(user@ascii-studio)-[~]\n └─$ afetch --system-diagnostics\n\n", "cmd_prompt")
+        self.txt_ascii.insert(tk.END, " ┌──(user@voxeltext)-[~]\n └─$ afetch --system-diagnostics\n\n", "cmd_prompt")
         maw = max(len(l) for l in ascii_logo) if ascii_logo else 0
         il = [("title", info["title"]), ("sep", "━" * (len(info["title"]) + 2))] + [("spec", s) for s in specs]
         tr = max(len(ascii_logo), len(il) + 2)
