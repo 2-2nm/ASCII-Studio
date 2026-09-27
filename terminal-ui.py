@@ -91,7 +91,7 @@ class AsciiArtAppCTk(ctk.CTk):
                 hrs, rem = divmod(int(time.time() - psutil.boot_time()), 3600); mins, _ = divmod(rem, 60)
                 uptime_str = f"{hrs}h {mins}m" if hrs > 0 else f"{mins}m"
             except Exception: pass
-        return {"title": f"{un}@{hn}", "OS": oi, "Kernel": kr, "Uptime": uptime_str, "DateTime": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "CPU": cpu, "GPU": gpu, "Memory": ram_str, "Disk": disk_str, "Terminal": f"ASCII Engine v1.0 Global ({MAX_WORKERS} Threads Active)"}
+        return {"title": f"{un}@{hn}", "OS": oi, "Kernel": kr, "Uptime": uptime_str, "DateTime": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "CPU": cpu, "GPU": gpu, "Memory": ram_str, "Disk": disk_str, "Terminal": f"ASCII Engine v1.0.0 Global ({MAX_WORKERS} Threads Active)"}
 
     def load_ascii_art_logo(self):
         sd = os.path.dirname(os.path.abspath(__file__)); tp = os.path.join(sd, "ascii_terminal.txt")
@@ -116,7 +116,7 @@ class AsciiArtAppCTk(ctk.CTk):
         self.txt_ascii.tag_config("val", foreground=self.colors["val_tag"], font=("Consolas", 9))
         self.txt_ascii.tag_config("note", foreground=self.colors["note_tag"], font=("Consolas", 9, "italic"))
         specs = [("OS", info["OS"]), ("Kernel", info["Kernel"]), ("Uptime", info["Uptime"]), ("Date Time", info["DateTime"]), ("CPU", info["CPU"]), ("GPU", info["GPU"]), ("Memory", info["Memory"]), ("Disk", info["Disk"]), ("Terminal", info["Terminal"])]
-        self.txt_ascii.insert(tk.END, " ┌──(user@voxeltext)-[~]\n └─$ afetch --system-diagnostics\n\n", "cmd_prompt")
+        self.txt_ascii.insert(tk.END, " ┌──(user@voxel-text)-[~]\n └─$ afetch --system-diagnostics\n\n", "cmd_prompt")
         maw = max(len(l) for l in ascii_logo) if ascii_logo else 0
         il = [("title", info["title"]), ("sep", "━" * (len(info["title"]) + 2))] + [("spec", s) for s in specs]
         tr = max(len(ascii_logo), len(il) + 2)
@@ -193,7 +193,7 @@ class AsciiArtAppCTk(ctk.CTk):
         tb.pack(side="top", fill="x", padx=12, pady=(12, 6))
         df = ctk.CTkFrame(tb, fg_color="transparent"); df.pack(side="left", padx=(12, 6))
         for dc in ["#F7768E", "#E0AF68", "#9ECE6A"]: ctk.CTkFrame(df, width=10, height=10, corner_radius=5, fg_color=dc).pack(side="left", padx=3)
-        ctk.CTkLabel(tb, text="bash - ascii-studio@tty1", font=ctk.CTkFont(family="Consolas", size=12, weight="bold"), text_color=self.CTK_TEXT_PRIMARY).pack(side="left", padx=12, pady=8)
+        ctk.CTkLabel(tb, text="bash - voxel-text@tty1", font=ctk.CTkFont(family="Consolas", size=12, weight="bold"), text_color=self.CTK_TEXT_PRIMARY).pack(side="left", padx=12, pady=8)
         self.switch_theme = ctk.CTkSwitch(tb, text="DARK MODE", font=ctk.CTkFont(family="Consolas", size=11, weight="bold"), text_color=self.CTK_TEXT_PRIMARY, command=self.toggle_theme_mode, progress_color="#2563EB")
         self.switch_theme.select(); self.switch_theme.pack(side="right", padx=12, pady=8)
         self.btn_top_load = ctk.CTkButton(tb, text="Convert Image", fg_color=self.CTK_ACCENT, hover_color="#1D4ED8", text_color="#FFFFFF", font=ctk.CTkFont(family="Consolas", size=11, weight="bold"), corner_radius=4, command=self.convert_image_process)
